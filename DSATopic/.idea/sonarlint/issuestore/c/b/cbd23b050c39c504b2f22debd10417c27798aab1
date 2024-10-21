@@ -1,0 +1,24 @@
+
+m	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º”¢¤8í‘Ñ’”2
+r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡·Ö¬üÿÿÿÿ8í‘Ñ’”2
+l	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê™œK8í‘Ñ’”2
+m	java:S117a"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏŒôï8í‘Ñ’”2
+m	java:S117n"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶Ş­ô8í‘Ñ’”2
+m	java:S117o"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Ê Õ8í‘Ñ’”2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŠÅŸƒøÿÿÿÿ8î‘Ñ’”2
+G	java:S106"+Replace this use of System.out by a logger.(¶Óü8ş‘Ñ’”2
+L	java:S106"+Replace this use of System.out by a logger.(›’’’ùÿÿÿÿ8ş‘Ñ’”2
+G	java:S106"+Replace this use of System.out by a logger.(©”ßÀ8ş‘Ñ’”2
+L	java:S106#"+Replace this use of System.out by a logger.(²Äì«ùÿÿÿÿ8ş‘Ñ’”2
+L	java:S106("+Replace this use of System.out by a logger.(üÌú„üÿÿÿÿ8ÿ‘Ñ’”2
+F	java:S106E"+Replace this use of System.out by a logger.(ü„ê!8ÿ‘Ñ’”2
+L	java:S106K"+Replace this use of System.out by a logger.(¾ùôŒùÿÿÿÿ8€’Ñ’”2
+L	java:S106Z"+Replace this use of System.out by a logger.(‹¢½’ûÿÿÿÿ8€’Ñ’”2
+[
+java:S1854o">Remove this useless assignment to local variable "right_size".(—Ê Õ8’Ñ’”2
+L
+java:S1481o"/Remove this unused "right_size" local variable.(—Ê Õ8’Ñ’”2
+M	java:S106‰"+Replace this use of System.out by a logger.(‹¯šùÿÿÿÿ8’Ñ’”2
+M	java:S106–"+Replace this use of System.out by a logger.(‹¯šùÿÿÿÿ8’Ñ’”2
+M	java:S106¡"+Replace this use of System.out by a logger.(‹¯šùÿÿÿÿ8’Ñ’”2
+M	java:S106­"+Replace this use of System.out by a logger.(ç‘›·şÿÿÿÿ8‘ÜÑ’”2

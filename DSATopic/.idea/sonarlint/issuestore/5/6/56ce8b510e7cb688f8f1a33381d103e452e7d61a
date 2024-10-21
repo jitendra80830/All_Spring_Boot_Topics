@@ -1,0 +1,10 @@
+
+z	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(ñÌ©´øÿÿÿÿ8“øö—˜2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÀîéÉÿÿÿÿÿ8•øö—˜2
+G
+java:S1197"*Move the array designators [] to the type.(€íõ“8Æøö—˜2
+G
+java:S1197"*Move the array designators [] to the type.(—¢™ú8Èøö—˜2
+L	java:S106	"+Replace this use of System.out by a logger.(‘¸ÉÏøÿÿÿÿ8Íøö—˜2
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(’¯×È8Íøö—˜2

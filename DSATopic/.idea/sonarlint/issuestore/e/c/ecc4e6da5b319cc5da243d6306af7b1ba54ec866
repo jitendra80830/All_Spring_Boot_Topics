@@ -1,0 +1,14 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õ”¥Ê8÷§çÁú1
+U
+java:S1854"8Remove this useless assignment to local variable "data".(œ¯¢8‹ã¿ı1
+Y
+java:S1854"7Remove this useless assignment to local variable "arr".(ˆŒ·Ÿûÿÿÿÿ8‹ã¿ı1
+L
+java:S1197"*Move the array designators [] to the type.(ˆŒ·Ÿûÿÿÿÿ8÷§çÁú1
+J
+java:S1481"(Remove this unused "arr" local variable.(ˆŒ·Ÿûÿÿÿÿ8‹ã¿ı1
+F
+java:S1481")Remove this unused "data" local variable.(œ¯¢8‹ã¿ı1
+]	java:S125"<This block of commented-out lines of code should be removed.(ò•„Ìùÿÿÿÿ8‹ã¿ı1
+X	java:S125"<This block of commented-out lines of code should be removed.(í¢ÌÄ8‘üğÁú1

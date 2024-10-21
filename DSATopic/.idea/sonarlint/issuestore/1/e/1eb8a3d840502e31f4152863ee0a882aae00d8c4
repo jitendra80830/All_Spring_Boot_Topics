@@ -1,0 +1,10 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õ”¥Ê8×Œå¿ý1
+Y
+java:S1854"<Remove this useless assignment to local variable "pivotEle".(£À‡à8æŒå¿ý1
+L
+java:S1197"*Move the array designators [] to the type.(ê†¾–úÿÿÿÿ8æŒå¿ý1
+J
+java:S1481"-Remove this unused "pivotEle" local variable.(£À‡à8æŒå¿ý1
+L
+java:S1197"*Move the array designators [] to the type.(Ö­æÐúÿÿÿÿ8æŒå¿ý1

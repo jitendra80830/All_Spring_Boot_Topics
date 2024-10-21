@@ -1,0 +1,18 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(πρΟ ωÿÿÿÿ8€λη®•2
+o	java:S100	"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰°θκωÿÿÿÿ8λη®•2
+g
+java:S1124	"EReorder the modifiers to comply with the Java Language Specification.(‰°θκωÿÿÿÿ8λη®•2
+V
+java:S2274":Remove this call to "wait" or move it into a "while" loop.(η£M8λη®•2
+R
+java:S2446"0"notify" may not wake up the appropriate thread.(σΔ£¶ψÿÿÿÿ8λη®•2
+G	java:S106"+Replace this use of System.out by a logger.(—»ώ8λη®•2
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(τΔΛΆÿÿÿÿÿ8λη®•2
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(τΔΛΆÿÿÿÿÿ8λη®•2
+V
+java:S2274":Remove this call to "wait" or move it into a "while" loop.(η£M8λη®•2
+G	java:S106"+Replace this use of System.out by a logger.(ροΨƒ8λη®•2
+R
+java:S2446"0"notify" may not wake up the appropriate thread.(σΔ£¶ψÿÿÿÿ8ε™θ®•2

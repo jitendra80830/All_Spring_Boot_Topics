@@ -1,0 +1,9 @@
+
+O
+java:S1199"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8°È ©•2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğñÏ ùÿÿÿÿ8°È ©•2
+G	java:S106
+"+Replace this use of System.out by a logger.(·¬½8ºÈ ©•2
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8Û¥¯©•2
+{
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾8ºÈ ©•2

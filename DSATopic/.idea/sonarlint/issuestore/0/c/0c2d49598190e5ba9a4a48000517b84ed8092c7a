@@ -1,0 +1,16 @@
+
+>
+java:S1643("Use a StringBuilder instead.(®šÏõøÿÿÿÿ8Œ¸Ğ€2
+>
+java:S1643-"Use a StringBuilder instead.(ÒÿŠ›ûÿÿÿÿ8Œ¸Ğ€2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ß8Œ¸Ğ€2
+m
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(™ù 8é¸Ğ€2
+l
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(°¾í~8é¸Ğ€2
+L	java:S106"+Replace this use of System.out by a logger.(üï¯úÿÿÿÿ8é¸Ğ€2
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÙÈÙØıÿÿÿÿ8ù¸Ğ€2
+^
+java:S11262"AReplace this if-then-else statement by a single return statement.(µÁ½â8ù¸Ğ€2
+]	java:S1250"<This block of commented-out lines of code should be removed.(–ù¨öúÿÿÿÿ8ÓÖ€2
