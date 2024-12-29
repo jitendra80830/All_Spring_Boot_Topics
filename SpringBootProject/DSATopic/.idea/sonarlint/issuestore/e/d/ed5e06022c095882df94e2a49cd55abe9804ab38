@@ -1,0 +1,16 @@
+
+Q
+java:S10660"/Merge this if statement with the enclosing one.(ÃÛˆüúÿÿÿÿ8´ºË­›2
+Q
+java:S1066Z"/Merge this if statement with the enclosing one.(ÃÛˆüúÿÿÿÿ8´ºË­›2
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆžÝîøÿÿÿÿ8Éúð—›2
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò—™¹8­úƒ˜›2
+m	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÅ¯•8µºË­›2
+m	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò—™¹8’Ž‹˜›2
+m	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ Ðð8µºË­›2
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æÅáO8Êúð—›2
+G	java:S106"+Replace this use of System.out by a logger.(äŸ°º8Òúð—›2
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÆžÝîøÿÿÿÿ8ì‹˜›2
+o
+java:S3776;"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÉÅ¯•8ì»Ë­›2

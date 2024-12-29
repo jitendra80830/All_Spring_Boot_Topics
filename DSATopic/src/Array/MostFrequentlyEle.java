@@ -2,7 +2,7 @@ package Array;
 
 public class MostFrequentlyEle {
     public static void main(String[] args) {
-        int arr[] = {2, 3, 1, 2, 3, 1,1 ,7, 1, 1, 1, 3};
+        int[] arr = {2, 3, 1, 2, 3, 1,1 ,7, 1, 1, 1, 3};
         int mostFrequentlyEle = mostFrequentlyEle(arr);
         System.out.println(mostFrequentlyEle);
     }

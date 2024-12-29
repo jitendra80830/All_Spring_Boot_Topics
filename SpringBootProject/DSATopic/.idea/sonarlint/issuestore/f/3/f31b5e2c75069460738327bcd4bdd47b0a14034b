@@ -1,0 +1,12 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Þ§÷«ýÿÿÿÿ8à®È°‡2
+@
+java:S1659"#Declare "front" on a separate line.(ÄéÅñ8à®È°‡2
+G
+java:S1197"*Move the array designators [] to the type.(¹”„Â8à®È°‡2
+8
+java:S3626"Remove this redundant jump.(ûÁÝ…8à®È°‡2
+G	java:S106"+Replace this use of System.out by a logger.(þ…ËÎ8à®È°‡2
+8
+java:S3626"Remove this redundant jump.(ûÁÝ…8à®È°‡2
+L	java:S106"+Replace this use of System.out by a logger.(»ýéŠùÿÿÿÿ8à®È°‡2

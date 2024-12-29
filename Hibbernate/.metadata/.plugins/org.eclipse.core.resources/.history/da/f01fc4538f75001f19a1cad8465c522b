@@ -1,0 +1,34 @@
+package come.tutorial.hibernate;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+public class HQLExample {
+	public static void main(String[] args) {
+		
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+		//session.beginTransaction();
+		String query = "from Student";
+		Query q = session.createQuery(query);
+		List<Student> list = q.list();
+		list.forEach(n ->{
+			System.out.println(n.getName()+" "+n.getCity()+" "+n.getId());
+		});
+		
+		
+		
+		
+		
+		
+		factory.close();
+		session.close();
+	}
+
+}

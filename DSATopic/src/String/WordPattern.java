@@ -11,7 +11,7 @@ public class WordPattern {
     }
 
     private static boolean wordPattern(String pattern, String word) {
-        String s[] = word.split(" ");
+        String[] s = word.split(" ");
         if(pattern.length()!=s.length){
             return false;
         }

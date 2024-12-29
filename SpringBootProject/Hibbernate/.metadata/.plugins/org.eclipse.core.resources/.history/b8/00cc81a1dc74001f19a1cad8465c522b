@@ -1,0 +1,44 @@
+package come.tutorial.hibernate;
+
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class Certificate {
+
+	private String duration;
+	private String cource;
+
+	public Certificate() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Certificate(String duration, String cource) {
+		super();
+		this.duration = duration;
+		this.cource = cource;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setName(String duration) {
+		this.duration = duration;
+	}
+
+	public String getCource() {
+		return cource;
+	}
+
+	public void setCource(String cource) {
+		this.cource = cource;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.cource+ " "+this.duration;
+	}
+
+}

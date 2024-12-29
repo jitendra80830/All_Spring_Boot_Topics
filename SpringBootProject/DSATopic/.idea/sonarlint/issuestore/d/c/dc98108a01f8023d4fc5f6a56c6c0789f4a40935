@@ -1,0 +1,11 @@
+
+9
+java:S1643"Use a StringBuilder instead.(§Èêæ8×€‡ 2
+8
+java:S1643 "Use a StringBuilder instead.(ÜÑÜV8Ø€‡ 2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ß8Ø€‡ 2
+}
+java:S4165 "aRemove this useless assignment; "ans" already holds the assigned value along all execution paths.(ÜÑÜV8ƒ‡ 2
+m
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(çäı8ƒ‡ 2
+G	java:S106	"+Replace this use of System.out by a logger.(ñ­´ç8¹  2

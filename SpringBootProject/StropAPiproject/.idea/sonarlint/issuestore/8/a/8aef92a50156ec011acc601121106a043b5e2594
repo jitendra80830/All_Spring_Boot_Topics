@@ -1,0 +1,43 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(Ê¬ØÚ8ÿÅˆ¬ú1
+L
+java:S3740"/Provide the parametrized type for this generic.(Ê¬ØÚ8€Æˆ¬ú1
+7
+java:S1220""Move this file to a named package.8Æˆ¬ú1
+]	java:S125"<This block of commented-out lines of code should be removed.(õÇé’ûÿÿÿÿ8Æˆ¬ú1
+G	java:S106"+Replace this use of System.out by a logger.(É‘Àê8‘Æˆ¬ú1
+o
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(‚Ú®ª8‘Æˆ¬ú1
+L	java:S106"+Replace this use of System.out by a logger.(ã¿¢Ôùÿÿÿÿ8’Æˆ¬ú1
+t
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ĞèÆ§şÿÿÿÿ8’Æˆ¬ú1
+L	java:S106"+Replace this use of System.out by a logger.(š—“¿ÿÿÿÿÿ8’Æˆ¬ú1
+N
+java:S1602",Remove useless curly braces around statement(ùƒÍíøÿÿÿÿ8“Æˆ¬ú1
+b
+java:S1612"@Replace this lambda with method reference 'System.out::println'.(ùƒÍíøÿÿÿÿ8“Æˆ¬ú1
+L	java:S106 "+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ8“Æˆ¬ú1
+n
+java:S6204$"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¤Á£8“Æˆ¬ú1
+H
+java:S1602'",Remove useless curly braces around statement(Ü½€f8“Æˆ¬ú1
+\
+java:S1612'"@Replace this lambda with method reference 'System.out::println'.(Ü½€f8“Æˆ¬ú1
+L	java:S106("+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ8”Æˆ¬ú1
+o
+java:S6204-"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ùïşõ8”Æˆ¬ú1
+I
+java:S1602.",Remove useless curly braces around statement(¸àè€8”Æˆ¬ú1
+]
+java:S1612."@Replace this lambda with method reference 'System.out::println'.(¸àè€8•Æˆ¬ú1
+L	java:S106/"+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ8•Æˆ¬ú1
+N
+java:S16021",Remove useless curly braces around statement(’Çû”ûÿÿÿÿ8•Æˆ¬ú1
+b
+java:S16121"@Replace this lambda with method reference 'System.out::println'.(’Çû”ûÿÿÿÿ8•Æˆ¬ú1
+L	java:S1062"+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ8•Æˆ¬ú1
+G	java:S1064"+Replace this use of System.out by a logger.(ÉæÑ8•Æˆ¬ú1
+L	java:S1065"+Replace this use of System.out by a logger.(±¡Œ‡øÿÿÿÿ8•Æˆ¬ú1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8•Æˆ¬ú1

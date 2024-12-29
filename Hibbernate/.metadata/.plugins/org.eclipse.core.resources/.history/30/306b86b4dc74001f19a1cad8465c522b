@@ -1,0 +1,35 @@
+package come.tutorial.hibernate;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class EmbeddableDemo {
+	public static void main(String[] args) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+
+		Session session = factory.openSession();
+
+		Student student = new Student();
+		student.setId(201);
+		student.setName("amna");
+		student.setCity("Noida");
+
+		Certificate certificate = new Certificate();
+		certificate.setName("Java certificate");
+		certificate.setCource("Java");
+		student.setCertificate(certificate);
+		Transaction transaction = session.beginTransaction();
+
+		session.save(student);
+
+		transaction.commit();
+		session.close();
+
+		factory.close();
+	}
+
+}

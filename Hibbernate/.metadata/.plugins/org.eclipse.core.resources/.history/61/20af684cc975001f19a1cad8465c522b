@@ -1,0 +1,33 @@
+package come.tutorial.hibernate.sqlQuery;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
+
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
+
+import come.tutorial.hibernate.Student;
+
+public class SqlQueries {
+	public static void main(String[] args) {
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		Session session = factory.openSession();
+		
+		NativeQuery dta =  session.createSQLQuery("select * from student");
+		
+		List<Object[]> list = dta.list();
+		for(Object[] s : list) {
+			System.out.println(Arrays.deepToString(s));
+			
+		}
+		
+		
+		factory.close();
+		session.close();
+	}
+
+}

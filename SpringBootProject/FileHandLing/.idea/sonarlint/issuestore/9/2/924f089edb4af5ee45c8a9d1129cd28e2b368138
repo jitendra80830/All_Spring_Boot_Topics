@@ -1,0 +1,39 @@
+
+Š
+java:S1192"mDefine a constant instead of duplicating this literal "C:\\Users\\jitendra.kumar\\Pictures\
+ote.txt" 3 times.(½Úöş8®¡’˜2
+7
+java:S1220""Move this file to a named package.8¬‰ò˜2
+]	java:S125"<This block of commented-out lines of code should be removed.(¬¼˜ºúÿÿÿÿ8¬‰ò˜2
+^
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(½Úöş8¬‰ò˜2
+L	java:S106"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8¬‰ò˜2
+G	java:S106"+Replace this use of System.out by a logger.(ñ‚¾’8¬‰ò˜2
+L	java:S106!"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8¬‰ò˜2
+^
+java:S1075&"ARefactor your code to get this URI from a customizable parameter.(ª³å8»¡’˜2
+L	java:S106)"+Replace this use of System.out by a logger.(¹èƒ¹ÿÿÿÿÿ8¬‰ò˜2
+L	java:S106-"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8¬‰ò˜2
+L	java:S1065"+Replace this use of System.out by a logger.(¬ÂŒÎÿÿÿÿÿ8¬‰ò˜2
+L	java:S1068"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8¬‰ò˜2
+E	java:S108:")Either remove or fill this block of code.(ï­£Ä8Ñ°‘˜2
+^
+java:S1075A"ARefactor your code to get this URI from a customizable parameter.(½Úöş8È¹ª˜2
+G	java:S106E"+Replace this use of System.out by a logger.(Äô‹ò8¬‰ò˜2
+L	java:S106H"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8¼‰ò˜2
+L	java:S106J"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8¼‰ò˜2
+F	java:S106P"+Replace this use of System.out by a logger.(Æ¬­8½‰ò˜2
+G	java:S106S"+Replace this use of System.out by a logger.(Äô‹ò8½‰ò˜2
+L	java:S106W"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8½‰ò˜2
+X	java:S125V"<This block of commented-out lines of code should be removed.(™åï“8½‰ò˜2
+L	java:S106Z"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8ñ–˜2
+U
+java:S1144"8Remove this unused private "outputStreamWritter" method.(Ö©Õÿ8€—˜2
+S
+java:S1144%"1Remove this unused private "bufferReader" method.(£Öô¾úÿÿÿÿ8½‰ò˜2
+R
+java:S11441"5Remove this unused private "byteToCharStream" method.(õìúâ8½‰ò˜2
+K
+java:S1144@"/Remove this unused private "fileReader" method.(õÁ#8½‰ò˜2
+S
+java:S1144N"6Remove this unused private "inputStreamReader" method.(úúåÅ8½‰ò˜2

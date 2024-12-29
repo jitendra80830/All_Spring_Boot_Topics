@@ -1,0 +1,18 @@
+package come.tutorial.hibernate;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Projected started");
+       SessionFactory factory = new Configuration().buildSessionFactory(); 
+       System.out.println(factory);
+    }
+}

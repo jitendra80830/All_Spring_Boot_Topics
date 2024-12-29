@@ -1,0 +1,41 @@
+package come.tutorial.hibernate;
+
+public class Certificate {
+
+	private String name;
+	private String cource;
+
+	public Certificate() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Certificate(String name, String cource) {
+		super();
+		this.name = name;
+		this.cource = cource;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCource() {
+		return cource;
+	}
+
+	public void setCource(String cource) {
+		this.cource = cource;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+}

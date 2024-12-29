@@ -1,0 +1,25 @@
+package come.tutorial.hibernate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class EmbeddableDemo {
+	public static void main(String[] args) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		
+		Session session = factory.openSession();
+		
+		Student student = new Student();
+		student.setName("amna");
+		student.setCity("Noida");
+		student.setCertificate(null);
+		
+		
+		
+		session.close();
+		
+		factory.close();
+	}
+
+}

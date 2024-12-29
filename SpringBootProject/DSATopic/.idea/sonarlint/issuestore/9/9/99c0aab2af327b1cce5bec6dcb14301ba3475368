@@ -1,0 +1,19 @@
+
+>
+java:S1643"Use a StringBuilder instead.(“ñæüÿÿÿÿ8ØšÜ¿2
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ß8ÙšÜ¿2
+a
+java:S1854"?Remove this useless assignment to local variable "subsequence".(ö¿§Šøÿÿÿÿ8è³Ü¿2
+R
+java:S1481"0Remove this unused "subsequence" local variable.(ö¿§Šøÿÿÿÿ8é³Ü¿2
+G	java:S106	"+Replace this use of System.out by a logger.(‰ô„‡8ãšÜ¿2
+X	java:S125
+"<This block of commented-out lines of code should be removed.(Ê³Ø8é³Ü¿2
+c
+java:S1126"AReplace this if-then-else statement by a single return statement.(¸Ÿ¬Òûÿÿÿÿ8äšÜ¿2
+V
+java:S1854%"9Remove this useless assignment to local variable "sChar".(¯—·•8äšÜ¿2
+G
+java:S1481%"*Remove this unused "sChar" local variable.(¯—·•8äšÜ¿2
+c
+java:S1126/"AReplace this if-then-else statement by a single return statement.(ÖÅƒ¯øÿÿÿÿ8åšÜ¿2

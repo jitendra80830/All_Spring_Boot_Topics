@@ -1,0 +1,5 @@
+
+}
+java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "lcm".(ï­„ûşÿÿÿÿ8Ö®ÙÔ2
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æÅáO8óâÓÔ2
+G	java:S106"+Replace this use of System.out by a logger.(³²â8ıñÙÔ2
