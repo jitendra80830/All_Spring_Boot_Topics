@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+       /* Scanner sc = new Scanner(System.in);
         //2,3,6,8,-1
         int max = 0;
         while(true){
@@ -15,6 +15,6 @@ public class Main {
             }
 
         }
-        System.out.println(max);
+        System.out.println(max);*/
     }
 }
