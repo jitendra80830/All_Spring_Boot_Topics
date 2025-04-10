@@ -20,6 +20,7 @@ public class SpringSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception{
         return security.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
@@ -30,6 +31,7 @@ public class SpringSecurityConfig {
                 .build();
     }
 
+    @Bean
     public UserDetailsService userDetailsService(){
         UserDetails user = User.builder()
                 .username("user")
