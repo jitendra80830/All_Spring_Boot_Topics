@@ -4,10 +4,19 @@ public class TwoDArray {
                 {1, 0, 0},
                 {0, 0, 1}};
 
-        replaceZero(arr);
-    }
+        for (int i = 0; i < arr[0].length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("=================");
 
-    private static void replaceZero(int[][] arr) {
+        arr[0][1] = 2;
+        arr[1][1] = 2;
+        arr[1][2] = 2;
+        arr[2][0] = 2;
+        arr[2][1] = 2;
         for (int i = 0; i < arr[0].length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 System.out.print(arr[i][j] + " ");
@@ -15,21 +24,8 @@ public class TwoDArray {
             System.out.println();
         }
 
-        System.out.println("After replace 0 to 2");
-
-
-        for (int i = 0; i < arr[0].length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i][j] == 0) {
-                    arr[i][j] = 2;
-                }
-            }
-        }
-        for (int i = 0; i < arr[0].length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
+
+
 }
+

@@ -1,7 +1,8 @@
 public class MaximumConsecutive {
     public static void main(String[] args) {
-        String str = "aaaaatttttppppppbbbbbbbbbbbaaaaa";
+        String str = "ttuosoovouuutpptt";
         maximumConsecutive(str);
+
     }
 
     private static void maximumConsecutive(String str) {
