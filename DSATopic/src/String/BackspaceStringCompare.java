@@ -37,12 +37,12 @@ public class BackspaceStringCompare {
         }
         String ans = "";
         while (!s1.isEmpty()){
-            ans = ans+=s1.peek();
+            ans +=s1.peek();
             s1.pop();
         }
         String ans2 = "";
         while (!s2.isEmpty()){
-            ans2 = ans2+=s2.peek();
+            ans2+=s2.peek();
             s2.pop();
         }
         //System.out.println(ans+"  : "+ans2);
