@@ -1,0 +1,930 @@
+Got it 👍
+Now let’s consider Customer and Address tables and see all relationship scenarios with SQL + explanation.
+
+1. One-to-One (1:1)
+
+👉 Each customer has exactly one address.
+
+Schema
+CREATE TABLE Customer (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name        VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Address (
+    address_id   INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id  INT UNIQUE,   -- UNIQUE enforces 1:1 relationship
+    street       VARCHAR(200) NOT NULL,
+    city         VARCHAR(100) NOT NULL,
+    CONSTRAINT fk_address_customer
+        FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+
+✅ Here, customer_id in Address is unique, so one customer → one address only.
+
+2. One-to-Many (1:N)
+
+👉 One customer can have multiple addresses.
+
+Schema
+CREATE TABLE Customer (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name        VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Address (
+    address_id   INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id  INT NOT NULL,  -- foreign key only (no UNIQUE)
+    street       VARCHAR(200) NOT NULL,
+    city         VARCHAR(100) NOT NULL,
+    CONSTRAINT fk_address_customer
+        FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+
+✅ Now, the same customer_id can appear multiple times in Address.
+
+3. Many-to-One (N:1)
+
+👉 Multiple addresses belong to the same customer.
+➡️ This is just the reverse view of One-to-Many (same schema as above).
+
+4. Many-to-Many (M:N)
+
+👉 A customer can have multiple addresses, and the same address can belong to multiple customers (rare, but possible in shared housing/office).
+➡️ Requires a junction table.
+
+Schema
+CREATE TABLE Customer (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name        VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Address (
+    address_id   INT AUTO_INCREMENT PRIMARY KEY,
+    street       VARCHAR(200) NOT NULL,
+    city         VARCHAR(100) NOT NULL
+);
+
+-- Junction table for M:N relation
+CREATE TABLE Customer_Address (
+    customer_id INT,
+    address_id  INT,
+    PRIMARY KEY (customer_id, address_id),
+    CONSTRAINT fk_ca_customer FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    CONSTRAINT fk_ca_address FOREIGN KEY (address_id) REFERENCES Address(address_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+
+✅ Now, one customer can have many addresses, and one address can belong to many customers.
+
+🔑 Summary
+Relation Type	Mechanism	Example
+One-to-One	Foreign key + UNIQUE	One customer ↔ one passport address
+One-to-Many	Normal foreign key	One customer ↔ many addresses
+Many-to-One	Same as above (reverse)	Many addresses ↔ one customer
+Many-to-Many	Junction table	Customers ↔ Shared addresses
+
+
+
+==================================================
+
+i want get customer name , city and street ?
+ChatGPT said:
+
+Perfect 👍 Since you want customer name, city, and street, you’ll need to use a JOIN between Customer and Address.
+
+Assuming your schema looks like this:
+
+Customer(customer_id, name, ...)
+Address(address_id, customer_id, street, city, ...)
+
+✅ Query: Get Customer Name, City, and Street
+SELECT c.name AS customer_name,
+       a.city,
+       a.street
+FROM Customer c
+JOIN Address a ON c.customer_id = a.customer_id;
+
+🔎 Expla
+nation:
+
+JOIN Address a ON c.customer_id = a.customer_id → connects each customer to their addresses.
+
+c.name → from Customer table.
+
+a.city, a.street → from Address table.
+
+Example Output
+customer_name	city	street
+Rahul	Bangalore	MG Road
+Rahul	Bangalore	Whitefield
+Priya	Delhi	Connaught Place
+
+
+=================================================================
+
+Perfect 👍 Let’s do a mock interview assignment with Customer and Address tables (the same schema we discussed earlier).
+I’ll give you 5 scenario-based questions with solutions that match your 3 years of experience level.
+
+📝 Schema Reminder
+CREATE TABLE Customer (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name        VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Address (
+    address_id   INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id  INT NOT NULL,
+    street       VARCHAR(200) NOT NULL,
+    city         VARCHAR(100) NOT NULL,
+    address_type ENUM('HOME','OFFICE','BILLING','SHIPPING') DEFAULT 'HOME',
+    CONSTRAINT fk_customer_address
+        FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+);
+
+✅ Mock Questions & Answers
+Q1. Get all customers with their addresses.
+
+(If customer has multiple addresses → multiple rows)
+
+SELECT c.name AS customer_name,
+       a.city,
+       a.street
+FROM Customer c
+INNER JOIN Address a 
+       ON c.customer_id = a.customer_id;
+
+
+👉 Use case: Tests basic INNER JOIN. Only customers with addresses will appear.
+
+Q2. Get all customers even if they don’t have an address.
+SELECT c.name AS customer_name,
+       COALESCE(a.city, 'No City') AS city,
+       COALESCE(a.street, 'No Street') AS street
+FROM Customer c
+LEFT JOIN Address a 
+       ON c.customer_id = a.customer_id;
+
+
+👉 Use case: Tests LEFT JOIN and handling of NULL values with COALESCE.
+
+Q3. Find customers who don’t have any address.
+SELECT c.name AS customer_name
+FROM Customer c
+LEFT JOIN Address a 
+       ON c.customer_id = a.customer_id
+WHERE a.address_id IS NULL;
+
+
+👉 Use case: Classic anti-join pattern. Good to test if you understand NULLs after LEFT JOIN.
+
+Q4. Get the number of addresses each customer has.
+SELECT c.name AS customer_name,
+       COUNT(a.address_id) AS total_addresses
+FROM Customer c
+LEFT JOIN Address a 
+       ON c.customer_id = a.customer_id
+GROUP BY c.customer_id, c.name;
+
+
+👉 Use case: Combines JOIN + GROUP BY + COUNT. Very common in interviews.
+
+Q5. Find customers who have both a 'HOME' and an 'OFFICE' address.
+SELECT c.name AS customer_name
+FROM Customer c
+JOIN Address a 
+       ON c.customer_id = a.customer_id
+WHERE a.address_type IN ('HOME','OFFICE')
+GROUP BY c.customer_id, c.name
+HAVING COUNT(DISTINCT a.address_type) = 2;
+
+
+👉 Use case: Tests advanced GROUP BY + HAVING with DISTINCT.
+
+🎯 Interview Tip
+
+For 3 years experience, you should be ready to:
+
+Write INNER, LEFT, RIGHT joins confidently.
+
+Use COALESCE to handle NULL.
+
+Use GROUP BY + HAVING for aggregations.
+
+Explain why you chose INNER JOIN vs LEFT JOIN.
+
+👉 Do you want me to also prepare 5 advanced-level join problems (with subqueries, self-joins, and window functions) so you’re ready for senior-style follow-ups?
+
+You said:
+yes
+ChatGPT said:
+
+Perfect 👍 Now let’s level up with 5 advanced JOIN problems (these are the kind of follow-up questions you’ll face with 3+ years of experience).
+We’ll use the same Customer–Address schema.
+
+📝 Advanced Join Questions with Answers
+Q1. Find customers who live in the same city as 'Rahul'.
+
+👉 This requires a self-join on the Address table.
+
+SELECT DISTINCT c2.name AS customer_name, a2.city
+FROM Customer c1
+JOIN Address a1 ON c1.customer_id = a1.customer_id
+JOIN Address a2 ON a1.city = a2.city
+JOIN Customer c2 ON a2.customer_id = c2.customer_id
+WHERE c1.name = 'Rahul'
+  AND c2.customer_id <> c1.customer_id;
+
+
+✅ Customers who live in the same city as Rahul are returned.
+
+Q2. Find customers who have addresses in more than one city.
+SELECT c.name AS customer_name
+FROM Customer c
+JOIN Address a ON c.customer_id = a.customer_id
+GROUP BY c.customer_id, c.name
+HAVING COUNT(DISTINCT a.city) > 1;
+
+
+✅ Checks GROUP BY + HAVING with DISTINCT.
+
+Q3. Find customers who don’t have a 'HOME' address.
+SELECT c.name AS customer_name
+FROM Customer c
+LEFT JOIN Address a 
+       ON c.customer_id = a.customer_id 
+       AND a.address_type = 'HOME'
+WHERE a.address_id IS NULL;
+
+
+✅ Tests anti-join with a condition inside the JOIN.
+
+Q4. Get each customer’s most recent address (by max address_id).
+
+👉 Requires a subquery or a window function (MySQL 8+).
+
+Using Subquery:
+SELECT c.name, a.city, a.street
+FROM Customer c
+JOIN Address a 
+    ON c.customer_id = a.customer_id
+WHERE a.address_id = (
+    SELECT MAX(a2.address_id)
+    FROM Address a2
+    WHERE a2.customer_id = c.customer_id
+);
+
+Using Window Function (MySQL 8+):
+SELECT customer_name, city, street
+FROM (
+    SELECT c.name AS customer_name,
+           a.city,
+           a.street,
+           ROW_NUMBER() OVER (PARTITION BY c.customer_id ORDER BY a.address_id DESC) AS rn
+    FROM Customer c
+    JOIN Address a ON c.customer_id = a.customer_id
+) t
+WHERE rn = 1;
+
+
+✅ Interviewer checks if you know both classic subquery and modern window functions.
+
+Q5. Find top 2 customers with the maximum number of addresses.
+SELECT c.name, COUNT(a.address_id) AS total_addresses
+FROM Customer c
+JOIN Address a ON c.customer_id = a.customer_id
+GROUP BY c.customer_id, c.name
+ORDER BY total_addresses DESC
+LIMIT 2;
+
+
+✅======================================================4 yr ex=========================
+Since you have 4 years of experience as a Java developer, interviewers usually expect intermediate to advanced SQL, not just SELECT * FROM table.
+
+Here’s a real interview-focused SQL practice set (similar to what companies ask for 3–5 years experience).
+
+1. Find 2nd Highest Salary (Very Common)
+
+Table: employee
+
+id	name	salary
+1	A	50000
+2	B	70000
+3	C	60000
+SELECT MAX(salary)
+FROM employee
+WHERE salary < (
+    SELECT MAX(salary)
+    FROM employee
+);
+
+Using window function:
+
+SELECT salary
+FROM (
+    SELECT salary,
+           DENSE_RANK() OVER (ORDER BY salary DESC) rnk
+    FROM employee
+) t
+WHERE rnk = 2;
+2. Find Duplicate Records
+
+Table: customers
+
+SELECT email, COUNT(*)
+FROM customers
+GROUP BY email
+HAVING COUNT(*) > 1;
+3. Delete Duplicate Records but Keep One
+DELETE FROM customers
+WHERE id NOT IN (
+    SELECT MIN(id)
+    FROM customers
+    GROUP BY email
+);
+4. Employees Whose Salary > Average Salary
+SELECT *
+FROM employee
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employee
+);
+5. Find Employees Joined in Last 30 Days
+SELECT *
+FROM employee
+WHERE joining_date >= CURRENT_DATE - INTERVAL '30 days';
+
+(MySQL)
+
+SELECT *
+FROM employee
+WHERE joining_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
+6. Find Department Wise Highest Salary
+
+Table: employee
+
+| id | name | dept | salary |
+
+SELECT dept, MAX(salary)
+FROM employee
+GROUP BY dept;
+
+Advanced:
+
+SELECT *
+FROM (
+    SELECT *,
+           RANK() OVER (
+               PARTITION BY dept
+               ORDER BY salary DESC
+           ) rnk
+    FROM employee
+) t
+WHERE rnk = 1;
+7. INNER JOIN Interview Question
+
+Get employee name and department name.
+
+Tables:
+
+employee(emp_id, name, dept_id)
+
+department(dept_id, dept_name)
+
+SELECT e.name, d.dept_name
+FROM employee e
+INNER JOIN department d
+ON e.dept_id = d.dept_id;
+8. Difference Between LEFT JOIN and INNER JOIN
+
+LEFT JOIN returns all employees even without department.
+
+SELECT e.name, d.dept_name
+FROM employee e
+LEFT JOIN department d
+ON e.dept_id = d.dept_id;
+9. Find Employees Who Don’t Have Department
+SELECT e.*
+FROM employee e
+LEFT JOIN department d
+ON e.dept_id = d.dept_id
+WHERE d.dept_id IS NULL;
+10. Find Nth Highest Salary (Important)
+SELECT salary
+FROM (
+    SELECT salary,
+           DENSE_RANK() OVER (
+               ORDER BY salary DESC
+           ) rnk
+    FROM employee
+) t
+WHERE rnk = 3;
+11. Count Employees in Each Department
+SELECT dept_id, COUNT(*)
+FROM employee
+GROUP BY dept_id;
+12. Get Employees Having Same Salary
+SELECT salary, COUNT(*)
+FROM employee
+GROUP BY salary
+HAVING COUNT(*) > 1;
+13. Find Records Present in One Table but Not Another
+
+Tables:
+
+emp_old
+
+emp_new
+
+SELECT *
+FROM emp_old
+WHERE emp_id NOT IN (
+    SELECT emp_id
+    FROM emp_new
+);
+14. Find Odd and Even Records
+
+Even:
+
+SELECT *
+FROM employee
+WHERE MOD(id,2)=0;
+
+Odd:
+
+SELECT *
+FROM employee
+WHERE MOD(id,2)=1;
+15. Find Top 3 Highest Salaries
+SELECT salary
+FROM employee
+ORDER BY salary DESC
+LIMIT 3;
+
+Without LIMIT:
+
+SELECT *
+FROM (
+    SELECT salary,
+           DENSE_RANK() OVER (
+               ORDER BY salary DESC
+           ) rnk
+    FROM employee
+) t
+WHERE rnk <= 3;
+16. Self Join Question (Manager → Employee)
+
+Table:
+
+employee(id,name,manager_id)
+
+SELECT e.name AS employee,
+       m.name AS manager
+FROM employee e
+LEFT JOIN employee m
+ON e.manager_id = m.id;
+17. Find Consecutive Duplicate Values
+
+Table:
+
+logs(id, num)
+
+SELECT DISTINCT l1.num
+FROM logs l1
+JOIN logs l2 ON l1.id = l2.id - 1
+JOIN logs l3 ON l2.id = l3.id - 1
+WHERE l1.num = l2.num
+AND l2.num = l3.num;
+18. Transaction + Commit + Rollback (Interview Theory)
+BEGIN;
+
+UPDATE account
+SET balance = balance - 5000
+WHERE id = 1;
+
+UPDATE account
+SET balance = balance + 5000
+WHERE id = 2;
+
+COMMIT;
+
+If failure:
+
+ROLLBACK;
+19. Find Monthly Sales Report
+
+Table: orders
+
+SELECT MONTH(order_date),
+       SUM(amount)
+FROM orders
+GROUP BY MONTH(order_date);
+20. Create Index for Performance
+CREATE INDEX idx_employee_name
+ON employee(name);
+
+Interview follow-up:
+
+Q: Why index?
+
+Answer:
+
+Index improves search performance by reducing full table scans.
+
+
+
+
+
+================================topics wise examples==================================
+
+1. JOINs (Very Important)
+
+Used when data is split across tables.
+
+Tables:
+
+employee
+
+emp_id	name	dept_id
+1	John	101
+2	Alex	102
+3	Sam	NULL
+
+department
+
+dept_id	dept_name
+101	IT
+102	HR
+INNER JOIN
+
+Returns matching records only.
+
+SELECT e.name, d.dept_name
+FROM employee e
+INNER JOIN department d
+ON e.dept_id = d.dept_id;
+LEFT JOIN
+
+Returns all left table rows.
+
+SELECT e.name, d.dept_name
+FROM employee e
+LEFT JOIN department d
+ON e.dept_id = d.dept_id;
+RIGHT JOIN
+SELECT e.name, d.dept_name
+FROM employee e
+RIGHT JOIN department d
+ON e.dept_id = d.dept_id;
+SELF JOIN
+
+Employee → Manager relation.
+
+SELECT e.name employee,
+       m.name manager
+FROM employee e
+LEFT JOIN employee m
+ON e.manager_id = m.emp_id;
+
+Interview question:
+When do you use LEFT JOIN instead of INNER JOIN?
+
+Answer:
+When you want all records from one table even if matching data does not exist.
+
+2. GROUP BY + HAVING
+
+GROUP BY groups data.
+
+HAVING filters grouped data.
+
+SELECT dept_id, COUNT(*)
+FROM employee
+GROUP BY dept_id
+HAVING COUNT(*) > 5;
+
+Difference:
+
+WHERE → filters before grouping  
+HAVING → filters after grouping
+3. Subqueries
+
+Query inside another query.
+
+Find employees with salary greater than average.
+
+SELECT *
+FROM employee
+WHERE salary >
+(
+  SELECT AVG(salary)
+  FROM employee
+);
+
+Types:
+
+Single row subquery
+Multi row subquery
+Correlated subquery
+
+Correlated example:
+
+SELECT name
+FROM employee e1
+WHERE salary >
+(
+   SELECT AVG(salary)
+   FROM employee e2
+   WHERE e1.dept_id = e2.dept_id
+);
+4. CTE (Common Table Expression)
+
+Temporary result set.
+
+WITH high_salary AS
+(
+   SELECT *
+   FROM employee
+   WHERE salary > 50000
+)
+
+SELECT *
+FROM high_salary;
+
+Use case:
+
+Complex query readability
+Recursive queries
+Reusable logic
+5. Window Functions (Advanced + Frequently Asked)
+
+Perform calculation without collapsing rows.
+
+ROW_NUMBER()
+SELECT name,
+       salary,
+       ROW_NUMBER() OVER
+       (ORDER BY salary DESC)
+FROM employee;
+RANK()
+SELECT name,
+       salary,
+       RANK() OVER
+       (ORDER BY salary DESC)
+FROM employee;
+DENSE_RANK()
+SELECT name,
+       salary,
+       DENSE_RANK() OVER
+       (ORDER BY salary DESC)
+FROM employee;
+
+Difference:
+
+Salary: 100,100,90
+
+RANK       → 1,1,3  
+DENSE_RANK → 1,1,2
+6. Indexes (Performance)
+
+Index makes searching faster.
+
+CREATE INDEX idx_name
+ON employee(name);
+
+Without index:
+
+Full table scan
+
+With index:
+
+Uses B-tree search
+
+Question:
+
+Why not create index on every column?
+
+Answer:
+
+Because index increases:
+
+memory usage
+insert/update cost
+
+Since DB updates index every time data changes.
+
+Think of indexes like the index pages in a book.
+
+7. Normalization
+
+Reduce duplicate data.
+
+1NF
+
+No repeating columns.
+
+Bad:
+
+| id | phone1 | phone2 |
+
+Good:
+
+Separate phone table.
+
+2NF
+
+Remove partial dependency.
+
+3NF
+
+Remove transitive dependency.
+
+Example:
+
+Bad:
+
+| emp_id | dept_id | dept_name |
+
+Because dept_name depends on dept_id.
+
+Good:
+
+Separate department table.
+
+Interview question:
+
+Why normalize?
+
+Answer:
+
+To reduce redundancy and improve consistency.
+
+8. Transactions
+
+Transaction = multiple operations as one unit.
+
+Example money transfer.
+
+BEGIN;
+
+UPDATE account
+SET balance = balance - 5000
+WHERE id = 1;
+
+UPDATE account
+SET balance = balance + 5000
+WHERE id = 2;
+
+COMMIT;
+
+If failure:
+
+ROLLBACK;
+9. Stored Procedures
+
+SQL logic stored in database.
+
+Example:
+
+CREATE PROCEDURE GetEmployee()
+
+BEGIN
+   SELECT *
+   FROM employee;
+END;
+
+Call:
+
+CALL GetEmployee();
+
+Benefits:
+
+reusable
+faster execution
+security
+
+Interview question:
+
+Why use procedure instead of Java code?
+
+Answer:
+
+When logic needs to stay close to DB and reduce repeated SQL execution.
+
+10. Views
+
+Virtual table based on query.
+
+CREATE VIEW emp_view AS
+
+SELECT name, salary
+FROM employee;
+
+Query:
+
+SELECT *
+FROM emp_view;
+
+Use case:
+
+Hide sensitive data.
+
+Example:
+
+HR sees salary but employees do not.
+
+11. ACID Properties (Very Important)
+
+Transaction rules.
+
+A → Atomicity
+
+All operations succeed or all fail.
+
+Example:
+
+Money transfer.
+
+If second update fails → rollback.
+
+C → Consistency
+
+Database remains valid.
+
+Example:
+
+Balance cannot become invalid.
+
+I → Isolation
+
+Multiple transactions should not interfere.
+
+Example:
+
+Two users booking same seat.
+
+D → Durability
+
+After commit, data stays saved.
+
+Even after server crash.
+
+12. Query Optimization (Production Interview)
+
+Used to improve slow SQL.
+
+Use:
+
+EXPLAIN
+SELECT *
+FROM employee
+WHERE name='John';
+
+Check:
+
+full table scan?
+index used?
+expensive joins?
+too many subqueries?
+
+Optimization methods:
+
+create index
+avoid SELECT *
+use proper joins
+reduce nested subqueries
+pagination
+
+Bad:
+
+SELECT *
+FROM orders;
+
+Better:
+
+SELECT order_id,
+       amount
+FROM orders;
+13. DELETE vs TRUNCATE vs DROP
+Command	Meaning	Rollback	Structure
+DELETE	Removes selected rows	Yes	Kept
+TRUNCATE	Removes all rows	Usually No	Kept
+DROP	Deletes table completely	No	Removed
+DELETE
+DELETE
+FROM employee
+WHERE id = 1;
+TRUNCATE
+TRUNCATE TABLE employee;
+DROP
+DROP TABLE employee;

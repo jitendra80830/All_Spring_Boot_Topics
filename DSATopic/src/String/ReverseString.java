@@ -18,7 +18,6 @@ public class ReverseString {
     }
 
     private static void reverse(char[] ch) {
-
         int last = ch.length-1;
         int half = ch.length/2;
 

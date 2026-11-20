@@ -2,7 +2,7 @@ package String;
 
 public class FindtheIndexoftheFirstOccurrenceInAString {
     public static void main(String[] args) {
-        String haystack = "mississippi";
+        String haystack = "mississipi";
         String needle = "issipi";
         int occurrenceInAString = findtheIndexoftheFirstOccurrenceInAString(haystack, needle);
         System.out.println(occurrenceInAString);

@@ -54,7 +54,7 @@ public class Main {
        Map<String , Employee> highestLangDetpWise =  employees.stream().collect(Collectors.groupingBy(Employee::getDept, Collectors.collectingAndThen(
                 Collectors.maxBy(Comparator.comparingInt(e -> e.getLanguages().size()))
                 , Optional::get)));
-//        System.out.println(highestLangDetpWise);
+        System.out.println(highestLangDetpWise);
 
         //Find the most commonly used programming language among all employees.
           String mostLanUsed =  employees.stream().map(Employee::getLanguages).flatMap(List::stream).collect(Collectors
@@ -65,6 +65,6 @@ public class Main {
         //Find the department whose employees have the highest average salary.
      String highestEveSlry =  employees.stream().collect(Collectors.groupingBy(Employee::getDept , Collectors.averagingDouble(Employee::getSalary)))
               .entrySet().stream().max(Comparator.comparingDouble(Map.Entry::getValue)).map(Map.Entry::getKey).get();
-        System.out.println(highestEveSlry);
+//        System.out.println(highestEveSlry);
     }
 }
